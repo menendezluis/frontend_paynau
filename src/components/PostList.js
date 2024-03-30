@@ -1,33 +1,43 @@
 import React, { useEffect } from "react";
-import { Card, Container, Row, Col } from "react-bootstrap";
+import { Card, Container, Row, Col, Image } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../redux/actions/posts";
 
 const PostList = () => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts.posts) || [];
+
   useEffect(() => {
-    // Despachar la acción para obtener los posts cuando el componente se monta
+    // Dispatch the action to fetch posts when the component mounts
     dispatch(fetchPosts());
   }, [dispatch]);
 
+  const getAvatarUrl = (userId) => {
+    return `https://avatar.iran.liara.run/public/${userId}`;
+  };
+
   return (
-    <Container>
-      <Row>
-        {posts.map((post) => (
-          <Col key={post.id} xs={12} md={6} lg={4}>
-            <Card className="my-3">
-              <Card.Body>
+    <Container className="mt-3">
+      {posts.map((post) => (
+        <Card key={post.id} className="my-3">
+          <Card.Body>
+            <Row>
+              <Col xs={2}>
+                <Image
+                  src={getAvatarUrl(post.userId)}
+                  roundedCircle
+                  style={{ width: "50px", height: "50px" }}
+                />
+              </Col>
+              <Col xs={10}>
                 <Card.Title>{post.title}</Card.Title>
                 <Card.Text>{post.body}</Card.Text>
-              </Card.Body>
-              <Card.Footer>
                 <small className="text-muted">User ID: {post.userId}</small>
-              </Card.Footer>
-            </Card>
-          </Col>
-        ))}
-      </Row>
+              </Col>
+            </Row>
+          </Card.Body>
+        </Card>
+      ))}
     </Container>
   );
 };
