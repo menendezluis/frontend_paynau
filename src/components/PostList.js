@@ -5,8 +5,10 @@ import { fetchPosts } from "../redux/actions/posts";
 
 const PostList = () => {
   const dispatch = useDispatch();
-  const posts = useSelector((state) => state.posts.posts) || [];
-
+  const postsList = useSelector((state) => state.posts.posts) || [];
+  const filteredPostsList =
+    useSelector((state) => state.posts.filteredPosts) || [];
+  const posts = filteredPostsList.length ? filteredPostsList : postsList;
   useEffect(() => {
     // Dispatch the action to fetch posts when the component mounts
     dispatch(fetchPosts());

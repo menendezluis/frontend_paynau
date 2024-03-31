@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchPosts } from "../../actions/posts";
+import { fetchPosts, fetchFilteredPosts } from "../../actions/posts";
 
 const initialState = {
   posts: [],
+  filteredPosts: [], // New field to store filtered posts
   error: null,
 };
 
@@ -13,22 +14,30 @@ const postSlice = createSlice({
     setPosts(state, action) {
       state.posts = action.payload;
     },
+    setFilteredPosts(state, action) {
+      // Action to set filtered posts
+      state.filteredPosts = action.payload;
+    },
     setError(state, action) {
       state.error = action.payload;
+    },
+    clearFilters(state) {
+      // Action to clear filters
+      state.filteredPosts = [];
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchPosts.fulfilled, (state, action) => {
         state.posts = action.payload;
-        state.error = null;
       })
-      .addCase(fetchPosts.rejected, (state, action) => {
-        state.error = action.error.message;
+      .addCase(fetchFilteredPosts.fulfilled, (state, action) => {
+        state.filteredPosts = action.payload;
       });
   },
 });
 
-export const { setPosts, setError } = postSlice.actions;
+export const { setPosts, setFilteredPosts, setError, clearFilters } =
+  postSlice.actions;
 
 export default postSlice.reducer;
