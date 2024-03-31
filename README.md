@@ -1,71 +1,90 @@
-# Getting Started with Create React App
+# Frontend Paynau
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Simple post list with filters, redux and redux-toolkit
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+Make sure you have Docker installed on your system before proceeding || or clone the repo.
 
-### `npm start`
+## Building the Docker Image
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To build the Docker image locally, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone this repository to your local machine.
+2. Navigate to the root directory of the project.
+3. Run the following command to build the Docker image:
 
-### `npm test`
+   ```bash
+   docker build -t frontend_paynau .
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   Replace "frontend_paynau" with the desired name for your Docker image.
 
-### `npm run build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**If you want the docker image, you can find it on Docker Hub.**
+[frontend_paynau](https://hub.docker.com/repository/docker/luismenendezdev/frontend_paynau/general)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run a container based on the built Docker image, you can use the following command:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+````bash
+docker run -p 8080:80 frontend_paynau
+This will run a Docker container that will execute your application on port 8080 of the local host. You can change the port number if desired.
 
-### `npm run eject`
+Finding the Image on Docker Hub
+The Docker image of this project is available on Docker Hub. You can find it at the following link:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Your_frontend_paynau_on_Docker_Hub
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contribution
+If you want to contribute to this project, please follow these steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Fork the repository.
+Create a new branch (git checkout -b feature/new-feature).
+Make your changes and commit them (git commit -am 'Add a new feature').
+Push the branch (git push origin feature/new-feature).
+Open a Pull Request.
+# Project Name
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Brief description or introduction of your project here.
 
-## Learn More
+## Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Make sure you have Docker installed on your system before proceeding.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Building the Docker Image
 
-### Code Splitting
+To build the Docker image locally, follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Clone this repository to your local machine.
+2. Navigate to the root directory of the project.
+3. Run the following command to build the Docker image:
 
-### Analyzing the Bundle Size
+    ```bash
+    docker build -t frontend_paynau .
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Replace "frontend_paynau" with the desired name for your Docker image.
 
-### Making a Progressive Web App
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To run a container based on the built Docker image, you can use the following command:
 
-### Advanced Configuration
+```bash
+docker run -p 8080:80 frontend_paynau
+This will run a Docker container that will execute your application on port 8080 of the local host. You can change the port number if desired.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Finding the Image on Docker Hub
+The Docker image of this project is available on Docker Hub. You can find it at the following link:
 
-### Deployment
+Your_frontend_paynau_on_Docker_Hub
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Contribution
+If you want to contribute to this project, please follow these steps:
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# frontend_paynau
+Fork the repository.
+Create a new branch (git checkout -b feature/new-feature).
+Make your changes and commit them (git commit -am 'Add a new feature').
+Push the branch (git push origin feature/new-feature).
+Open a Pull Request.
+````
