@@ -1,6 +1,8 @@
 # Frontend Paynau
 
 Simple post list with filters, redux and redux-toolkit
+<img width="1675" alt="Screenshot 2024-03-31 at 7 43 58 AM" src="https://github.com/menendezluis/frontend_paynau/assets/76136932/63d6a66e-1c0a-4dd3-8932-68db4404df32">
+
 
 ## Installation
 
