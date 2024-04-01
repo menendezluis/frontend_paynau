@@ -15,11 +15,16 @@ function App() {
     dispatch(clearFilters());
   };
 
+  const handleSortChange = (sortBy) => {
+    dispatch(fetchFilteredPosts({ sortBy }));
+  };
+
   return (
     <div className="App">
       <ControlFilter
         onFilterChange={handleFilterChange}
         onResetFilters={handleResetFilters}
+        onSortChange={handleSortChange}
       />
       <PostList />
     </div>
